@@ -59,6 +59,32 @@
   <script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
   <script nomodule crossorigin id="vite-legacy-polyfill" src="./assets/polyfills-legacy-y-uP1yvr.js"></script>
   <script nomodule crossorigin id="vite-legacy-entry" data-src="./assets/index-legacy-B7mtj-uR.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+<script>
+(function(){
+  function ready(fn){if(document.body&&document.readyState!=='loading'){fn();}else{document.addEventListener('DOMContentLoaded',fn);}}
+  ready(function(){
+    var d=document.createElement('div');
+    d.id='__netdiag';
+    d.style.cssText='position:fixed;top:0;left:0;right:0;max-height:70vh;overflow:auto;background:#111;color:#0f0;font:11px/1.5 monospace;padding:8px;z-index:2147483647;white-space:pre-wrap;border-bottom:2px solid #0f0';
+    document.body.appendChild(d);
+    var L=function(m){var p=document.createElement('div');p.textContent=m;d.appendChild(p);};
+    L('=== NET DIAG ===');
+    L('UA: '+(navigator.userAgent||'').substring(0,90));
+    L('origin: '+location.origin);
+    L('href: '+location.href);
+    try{L('fetch patched: '+(window.fetch.toString().indexOf('native code')<0));}catch(e){L('fetch check err');}
+    try{L('Capacitor avail: '+(typeof window.Capacitor!=='undefined'));}catch(e){}
+    L('');
+    function t(name,url,opts){L('>> '+name);fetch(url,opts).then(function(r){L('   '+name+' OK '+r.status);return r.text().then(function(x){L('   body: '+x.substring(0,90));});}).catch(function(e){L('   '+name+' FAIL: '+(e&&e.message||e));});}
+    t('mc.alger.fun(cors)','http://mc.alger.fun/api/personalized?limit=1',{mode:'cors'});
+    t('mc.alger.fun(nocors)','http://mc.alger.fun/api/personalized?limit=1');
+    t('gdstudio(https)','https://music-api.gdstudio.xyz/api.php?types=search&count=1',{mode:'cors'});
+    t('donate(https)','https://donate.alger.fun/',{mode:'cors'});
+    t('music.alger.fun(http)','http://music.alger.fun/package.json',{mode:'cors'});
+    setTimeout(function(){L('');L('=== 8s elapsed ===');},8000);
+  });
+})();
+</script>
 </body>
 
 </html>
