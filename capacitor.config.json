@@ -10,6 +10,9 @@
     "contentInset": "always"
   },
   "plugins": {
+    "CapacitorHttp": {
+      "enabled": true
+    },
     "StatusBar": {
       "backgroundColor": "#00000000",
       "style": "dark",
