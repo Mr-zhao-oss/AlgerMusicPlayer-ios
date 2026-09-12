@@ -1,0 +1,45 @@
+.radio-detail-page[data-v-f08695dd] {
+  position: relative;
+}
+
+/* Hero Section */
+.hero-section[data-v-f08695dd] {
+  min-height: 200px;
+}
+
+/* Action Bar Sticky Behavior */
+.action-bar[data-v-f08695dd] {
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.animate-item[data-v-f08695dd] {
+  animation: fadeInUp-f08695dd 0.6s ease-out;
+}
+@keyframes fadeInUp-f08695dd {
+from {
+    opacity: 0;
+    transform: translateY(20px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+.hero-section[data-v-f08695dd] {
+    min-height: auto;
+}
+.action-bar[data-v-f08695dd] {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+}
+/* Button micro-interactions */
+button[data-v-f08695dd] {
+  cursor: pointer;
+}
+
+/* Hero background enhancement */
+.hero-bg[data-v-f08695dd] {
+  z-index: 0;
+}

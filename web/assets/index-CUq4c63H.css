@@ -1,0 +1,279 @@
+
+.home-list-card[data-v-a7546005] {
+  animation: itemFadeIn-a7546005 0.5s ease-out backwards;
+}
+@keyframes itemFadeIn-a7546005 {
+from {
+    opacity: 0;
+    transform: translateY(12px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+/* 优化水平滚动 */
+.artists-scroll {
+&[data-v-dac4788c] {
+  /* Hide scrollbar while maintaining functionality */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  /* Smooth scroll behavior */
+  scroll-behavior: smooth;
+
+  /* Enable snap scrolling for better UX */
+  scroll-snap-type: x proximity;
+
+  /* Enable momentum scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
+
+  /* Optimize for touch */
+  touch-action: pan-x pan-y;
+}
+&[data-v-dac4788c]::-webkit-scrollbar {
+    display: none;
+}
+}
+.artists-track[data-v-dac4788c] {
+  /* Ensure proper width for scrolling */
+  min-width: -moz-min-content;
+  min-width: min-content;
+}
+.artist-item[data-v-dac4788c] {
+  /* Snap alignment */
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+/* Scroll fade indicators */
+.scroll-fade-left[data-v-dac4788c],
+.scroll-fade-right[data-v-dac4788c] {
+  transition: opacity 0.3s ease;
+}
+
+/* Scrollbar hide */
+.scrollbar-hide[data-v-378e0be0] {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide[data-v-378e0be0]::-webkit-scrollbar {
+  display: none;
+}
+
+/* Nav chip animation */
+.nav-chip[data-v-378e0be0] {
+  animation: chipIn-378e0be0 0.4s ease both;
+}
+@keyframes chipIn-378e0be0 {
+from {
+    opacity: 0;
+    transform: translateY(6px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+/* Hero grid — left wider, right narrower, equal row height */
+.hero-grid[data-v-378e0be0] {
+  grid-template-columns: 3fr 2fr;
+}
+
+/* Cards fill grid row height equally */
+.hero-grid > .hero-card[data-v-378e0be0] {
+  height: 100%;
+}
+.hero-grid > .hero-card > .daily-card[data-v-378e0be0],
+.hero-grid > .hero-card > .fm-card[data-v-378e0be0] {
+  height: 100%;
+  min-height: 140px;
+  max-height: 180px;
+}
+
+/* Card animation */
+.hero-card[data-v-378e0be0] {
+  animation: cardUp-378e0be0 0.5s ease both;
+}
+@keyframes cardUp-378e0be0 {
+from {
+    opacity: 0;
+    transform: translateY(10px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+/* FM background flow animation when playing */
+.fm-bg-flow[data-v-378e0be0] {
+  animation: bgFlow-378e0be0 8s ease-in-out infinite alternate;
+}
+@keyframes bgFlow-378e0be0 {
+0% {
+    transform: scale(1.5) translate(0, 0);
+}
+33% {
+    transform: scale(1.6) translate(-3%, 2%);
+}
+66% {
+    transform: scale(1.55) translate(2%, -2%);
+}
+100% {
+    transform: scale(1.5) translate(-1%, 1%);
+}
+}
+
+/* FM cover — sized relative to card, leaving padding space */
+.fm-cover[data-v-378e0be0] {
+  height: calc(100% - 6px);
+}
+
+/* FM equalizer bars */
+.eq-bar[data-v-378e0be0] {
+  width: 3px;
+  border-radius: 9999px;
+  background-color: #22c55e;
+  animation: eqPulse-378e0be0 0.8s ease-in-out infinite;
+}
+.eq-bar[data-v-378e0be0]:nth-child(1) {
+  height: 6px;
+}
+.eq-bar[data-v-378e0be0]:nth-child(2) {
+  height: 12px;
+}
+.eq-bar[data-v-378e0be0]:nth-child(3) {
+  height: 8px;
+}
+@keyframes eqPulse-378e0be0 {
+0%,
+  100% {
+    transform: scaleY(1);
+}
+50% {
+    transform: scaleY(1.6);
+}
+}
+
+/* Skeleton shimmer */
+.skeleton-shimmer[data-v-378e0be0] {
+  background: linear-gradient(
+    90deg,
+    #e5e5e5 25%,
+    #f5f5f5 50%,
+    #e5e5e5 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer-378e0be0 1.5s infinite;
+}
+[data-v-378e0be0] .dark .skeleton-shimmer,
+.dark .skeleton-shimmer[data-v-378e0be0] {
+  background: linear-gradient(
+    90deg,
+    #262626 25%,
+    #404040 50%,
+    #262626 75%
+  );
+  background-size: 200% 100%;
+}
+@keyframes shimmer-378e0be0 {
+0% {
+    background-position: 200% 0;
+}
+100% {
+    background-position: -200% 0;
+}
+}
+
+/* 网格 */
+.songs-grid[data-v-33480896] {
+  grid-auto-rows: auto;
+}
+.home-container[data-v-8ce86cf1] {
+  position: relative;
+}
+.mobile .main-content[data-v-8ce86cf1] {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 10rem;
+  flex-direction: column;
+}
+
+/* Global animation optimization - use will-change sparingly */
+[data-v-8ce86cf1] .animate-item {
+  animation: fadeInUp-8ce86cf1 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+@keyframes fadeInUp-8ce86cf1 {
+from {
+    opacity: 0;
+    transform: translateY(24px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+/* Stagger delays for sequential animations */
+[data-v-8ce86cf1] .animate-item:nth-child(1) {
+  animation-delay: 0.05s;
+}
+[data-v-8ce86cf1] .animate-item:nth-child(2) {
+  animation-delay: 0.1s;
+}
+[data-v-8ce86cf1] .animate-item:nth-child(3) {
+  animation-delay: 0.15s;
+}
+[data-v-8ce86cf1] .animate-item:nth-child(4) {
+  animation-delay: 0.2s;
+}
+[data-v-8ce86cf1] .animate-item:nth-child(5) {
+  animation-delay: 0.25s;
+}
+[data-v-8ce86cf1] .animate-item:nth-child(6) {
+  animation-delay: 0.3s;
+}
+[data-v-8ce86cf1] .animate-item:nth-child(7) {
+  animation-delay: 0.35s;
+}
+[data-v-8ce86cf1] .animate-item:nth-child(8) {
+  animation-delay: 0.4s;
+}
+[data-v-8ce86cf1] .animate-item:nth-child(9) {
+  animation-delay: 0.45s;
+}
+[data-v-8ce86cf1] .animate-item:nth-child(10) {
+  animation-delay: 0.5s;
+}
+[data-v-8ce86cf1] .animate-item:nth-child(11) {
+  animation-delay: 0.55s;
+}
+[data-v-8ce86cf1] .animate-item:nth-child(12) {
+  animation-delay: 0.6s;
+}
+[data-v-8ce86cf1] .animate-item:nth-child(13) {
+  animation-delay: 0.65s;
+}
+[data-v-8ce86cf1] .animate-item:nth-child(14) {
+  animation-delay: 0.7s;
+}
+[data-v-8ce86cf1] .animate-item:nth-child(15) {
+  animation-delay: 0.75s;
+}
+[data-v-8ce86cf1] .animate-item:nth-child(16) {
+  animation-delay: 0.8s;
+}
+[data-v-8ce86cf1] .animate-item:nth-child(17) {
+  animation-delay: 0.85s;
+}
+[data-v-8ce86cf1] .animate-item:nth-child(18) {
+  animation-delay: 0.9s;
+}
+[data-v-8ce86cf1] .animate-item:nth-child(19) {
+  animation-delay: 0.95s;
+}
+[data-v-8ce86cf1] .animate-item:nth-child(20) {
+  animation-delay: 1s;
+}

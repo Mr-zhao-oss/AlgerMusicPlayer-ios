@@ -1,0 +1,23 @@
+.search-result-page[data-v-29584c52] {
+  position: relative;
+}
+.animate-item[data-v-29584c52] {
+  animation: fadeInUp-29584c52 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+@keyframes fadeInUp-29584c52 {
+from {
+    opacity: 0;
+    transform: translateY(20px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+.no-scrollbar[data-v-29584c52] {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar[data-v-29584c52]::-webkit-scrollbar {
+  display: none;
+}

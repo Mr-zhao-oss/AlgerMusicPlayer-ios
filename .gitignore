@@ -1,0 +1,14 @@
+# dependencies
+node_modules/
+
+# Capacitor generated iOS project (created by `npx cap add ios` in CI)
+ios/
+
+# build output
+build/
+*.xcarchive
+*.ipa
+
+# misc
+.DS_Store
+*.log

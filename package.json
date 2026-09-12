@@ -1,0 +1,28 @@
+{
+  "name": "algermusicplayer-ios-build",
+  "version": "5.1.0",
+  "private": true,
+  "description": "iOS build scaffold for AlgerMusicPlayer - reuses the official Android web assets (already bundle-injected with the cloud music API at mc.alger.fun) and builds an unsigned IPA via Capacitor on GitHub Actions macOS runners.",
+  "scripts": {
+    "sync:ios": "cap sync ios",
+    "add:ios": "cap add ios"
+  },
+  "dependencies": {
+    "@capacitor-community/safe-area": "7.0.0",
+    "@capacitor/app": "^7.0.0",
+    "@capacitor/core": "^7.0.0",
+    "@capacitor/device": "^7.0.0",
+    "@capacitor/ios": "^7.0.0",
+    "@capacitor/keyboard": "^7.0.0",
+    "@capacitor/screen-orientation": "^7.0.0",
+    "@capacitor/status-bar": "^7.0.0",
+    "@jofr/capacitor-media-session": "4.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.0.0"
+  },
+  "_notes": [
+    "Capacitor 7 chosen: matches @capacitor/* 7.6.9 + @capacitor-community/safe-area 7.0.0 (peer >=7).",
+    "@jofr/capacitor-media-session 4.0.0 declares peer @capacitor/core ^6.0.0 (no 7.x exists); npm only warns. If pod install fails on iOS, pin Capacitor to 6.x and drop safe-area, or replace media-session."
+  ]
+}

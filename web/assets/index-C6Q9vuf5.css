@@ -1,0 +1,27 @@
+
+.animate-item[data-v-4d3b919f] {
+  animation: fadeInUp-4d3b919f 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+@keyframes fadeInUp-4d3b919f {
+from {
+    opacity: 0;
+    transform: translateY(24px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+.animate-item[data-v-0129f8e5] {
+  animation: fadeInUp-0129f8e5 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+@keyframes fadeInUp-0129f8e5 {
+from {
+    opacity: 0;
+    transform: translateY(24px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}

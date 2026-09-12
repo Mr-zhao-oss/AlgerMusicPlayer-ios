@@ -1,0 +1,72 @@
+.music-list-page[data-v-580192e5] {
+  position: relative;
+}
+.hero-section[data-v-580192e5] {
+  min-height: 300px;
+}
+.action-bar[data-v-580192e5] {
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.animate-item[data-v-580192e5] {
+  animation: fadeInUp-580192e5 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+@keyframes fadeInUp-580192e5 {
+from {
+    opacity: 0;
+    transform: translateY(20px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+.action-btn-pill[data-v-580192e5] {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 229 229 / var(--tw-border-opacity, 1));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.action-btn-pill[data-v-580192e5]:is(.dark *) {
+  --tw-border-opacity: 1;
+  border-color: rgb(38 38 38 / var(--tw-border-opacity, 1));
+}
+.action-btn-pill[data-v-580192e5]:hover:not(:disabled) {
+  border-color: rgb(34 197 94 / 0.3);
+  background-color: rgb(34 197 94 / 0.05);
+}
+.action-btn-icon[data-v-580192e5] {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.action-btn-icon[data-v-580192e5]:hover {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  background-color: rgb(34 197 94 / 0.1);
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity, 1));
+}
+.song-list-container[data-v-580192e5] {
+  padding-bottom: 100px;
+}
+.song-highlight[data-v-580192e5] {
+  animation: highlightPulse-580192e5 2s ease-out;
+}
+@keyframes highlightPulse-580192e5 {
+0%, 30% {
+    background-color: rgba(var(--primary-color-rgb, 64, 128, 255), 0.15);
+    border-radius: 12px;
+}
+100% {
+    background-color: transparent;
+}
+}
+.mobile .hero-section[data-v-580192e5] {
+  min-height: auto;
+}
+.mobile .action-bar[data-v-580192e5] {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}

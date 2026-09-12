@@ -1,0 +1,13 @@
+.animate-item[data-v-8b3d2e31] {
+  animation: fadeInUp-8b3d2e31 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+@keyframes fadeInUp-8b3d2e31 {
+from {
+    opacity: 0;
+    transform: translateY(24px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}

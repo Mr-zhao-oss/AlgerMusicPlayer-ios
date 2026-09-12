@@ -1,0 +1,30 @@
+{
+  "appId": "com.algermusic.app",
+  "appName": "AlgerMusicPlayer",
+  "webDir": "web",
+  "server": {
+    "iosScheme": "capacitor"
+  },
+  "ios": {
+    "scheme": "AlgerMusicPlayer",
+    "contentInset": "always"
+  },
+  "plugins": {
+    "StatusBar": {
+      "backgroundColor": "#00000000",
+      "style": "dark",
+      "overlaysWebView": true
+    },
+    "SplashScreen": {
+      "launchShowDuration": 0,
+      "launchAutoHide": true,
+      "showSpinner": false,
+      "backgroundColor": "#000000"
+    },
+    "Keyboard": {
+      "resize": "body",
+      "style": "DARK",
+      "resizeOnFullScreen": true
+    }
+  }
+}
