@@ -65,23 +65,29 @@
   ready(function(){
     var d=document.createElement('div');
     d.id='__netdiag';
-    d.style.cssText='position:fixed;top:0;left:0;right:0;max-height:70vh;overflow:auto;background:#111;color:#0f0;font:11px/1.5 monospace;padding:8px;z-index:2147483647;white-space:pre-wrap;border-bottom:2px solid #0f0';
+    d.style.cssText='position:fixed;top:0;left:0;right:0;max-height:80vh;overflow:auto;background:#111;color:#0f0;font:11px/1.5 monospace;padding:8px;z-index:2147483647;white-space:pre-wrap;border-bottom:2px solid #0f0';
     document.body.appendChild(d);
     var L=function(m){var p=document.createElement('div');p.textContent=m;d.appendChild(p);};
-    L('=== NET DIAG ===');
-    L('UA: '+(navigator.userAgent||'').substring(0,90));
+    L('=== NET DIAG v2 ===');
     L('origin: '+location.origin);
-    L('href: '+location.href);
-    try{L('fetch patched: '+(window.fetch.toString().indexOf('native code')<0));}catch(e){L('fetch check err');}
-    try{L('Capacitor avail: '+(typeof window.Capacitor!=='undefined'));}catch(e){}
-    L('');
-    function t(name,url,opts){L('>> '+name);fetch(url,opts).then(function(r){L('   '+name+' OK '+r.status);return r.text().then(function(x){L('   body: '+x.substring(0,90));});}).catch(function(e){L('   '+name+' FAIL: '+(e&&e.message||e));});}
-    t('mc.alger.fun(cors)','http://mc.alger.fun/api/personalized?limit=1',{mode:'cors'});
-    t('mc.alger.fun(nocors)','http://mc.alger.fun/api/personalized?limit=1');
-    t('gdstudio(https)','https://music-api.gdstudio.xyz/api.php?types=search&count=1',{mode:'cors'});
-    t('donate(https)','https://donate.alger.fun/',{mode:'cors'});
-    t('music.alger.fun(http)','http://music.alger.fun/package.json',{mode:'cors'});
-    setTimeout(function(){L('');L('=== 8s elapsed ===');},8000);
+    var C=window.Capacitor;
+    L('Capacitor: '+(C?'yes':'no')+' v'+(C&&C.version||'?'));
+    var P=(C&&C.Plugins)||{};
+    var pn=Object.keys(P);
+    L('plugins('+pn.length+'): '+pn.join(','));
+    L('hasCapacitorHttp: '+('CapacitorHttp' in P));
+    if(P.CapacitorHttp){
+      P.CapacitorHttp.request({url:'https://example.com',method:'GET'}).then(function(r){L('nativeHttp req example.com OK status='+r.status);}).catch(function(e){L('nativeHttp req FAIL: '+(e&&e.message||JSON.stringify(e)).substring(0,140));});
+      P.CapacitorHttp.get({url:'http://mc.alger.fun/api/personalized?limit=1'}).then(function(r){L('nativeHttp get mc OK status='+r.status+' d='+String(r.data).substring(0,60));}).catch(function(e){L('nativeHttp get mc FAIL: '+(e&&e.message||JSON.stringify(e)).substring(0,140));});
+    } else { L('!! CapacitorHttp plugin NOT registered !!'); }
+    if(P.Device){P.Device.getInfo().then(function(r){L('Device OK: '+r.platform+'/'+r.osVersion);}).catch(function(e){L('Device FAIL: '+(e&&e.message||e));});}
+    if(P.App){P.App.getInfo().then(function(r){L('App OK: '+JSON.stringify(r).substring(0,80));}).catch(function(e){L('App FAIL: '+(e&&e.message||e));});}
+    function f(name,url){L('>> fetch '+name);fetch(url,{mode:'cors'}).then(function(r){L('   '+name+' OK '+r.status);}).catch(function(e){L('   '+name+' FAIL '+(e&&e.message||e)+' ['+(e&&e.name||'?')+']');});}
+    f('example.com','https://example.com');
+    f('mc.alger.fun','http://mc.alger.fun/api/personalized?limit=1');
+    f('gdstudio','https://music-api.gdstudio.xyz/api.php?types=search&count=1');
+    f('donate','https://donate.alger.fun/');
+    setTimeout(function(){L('=== 10s ===');},10000);
   });
 })();
 </script>
